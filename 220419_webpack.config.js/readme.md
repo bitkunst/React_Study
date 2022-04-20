@@ -1,7 +1,7 @@
 # webpack
 기본적으로 webpack은 nodejs 환경에서 돌아간다.
 <br>
-그렇기 때문에 npm 패키지 설치가 쉽게 가능하다.
+그렇기 때문에 npm을 이용해 패키지를 설치하고 사용하는 것이 가능하다.
 <br>
 ```
 npm init -y
@@ -82,11 +82,19 @@ src 폴더 안에서 코드가 수정된 것을 감지하면,
 개발할 때만 사용.
 webpack에서 특정한 웹서버를 가져와서 붙여넣은 것. ( webpack에서 연결할 수 있게끔 도와준다. )
 <br>
+<br>
+webpack-dev-server : 서버를 돌리기 전에 src 디렉토리에 있는 파일을 번들링해서 dist 디렉토리 안에 최신화시킨다. 
+<br>
+그리고 해당 결과물을 가지고 화면에 랜더되는 것을 보여준다.
+<br>
+cf ) webpack 과 webpack-dev-server는 다른개념. webpack은 번들링.
+<br>
 ```
     npm install -D webpack-dev-server
 ```
 package.json 파일 안의 script 부분에서 devServer를 실행할 수 있는 코드를 작성해준다.
 <br>
+"dev": "webpack server --env development"
 <br>
 
 ---
