@@ -25,9 +25,18 @@ class App extends Component {
 
     addList = (obj) => {
         this.setState({
+            ...this.state,
             list: [...this.state.list, obj]
         })
     }
+
+    updateList = list => {
+        this.setState({
+            ...this.state,
+            list
+        })
+    }
+
 
     render() {
 
@@ -38,7 +47,7 @@ class App extends Component {
                 {gogo()}
                 <Comment>
                     <CommentForm addList={this.addList} />
-                    <CommentList list={list} />
+                    <CommentList list={list} updateList={this.updateList} />
                 </Comment>
             </>
         )

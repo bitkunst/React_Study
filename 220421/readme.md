@@ -31,7 +31,8 @@ html의 innerHTML과 유사. { this.props.children } 형태로 내용을 가져�
 <br>
 생명주기 함수
 
-- componentDidMount()
-- componentDidUpdate()
+- componentDidMount()  :  최초로 컴포넌트가 랜더가 완료되었을 때
+- componentDidUpdate()  :  컴포넌트가 리랜더링 되었을 때 <- 상태가 바뀌었을 때
+- componentWillUnmount()  :  컴포넌트가 사라질 때 (socket 종료 시점에서 많이 사용)
 
 
