@@ -3,6 +3,7 @@ import './App.css';
 import Form from './Components/Form/Form.jsx'
 import Form2 from './Components/Form/Form2.jsx'
 import Form3 from './Components/Form/Form3.jsx'
+import Form4 from './Components/Form/Form4.jsx'
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
 
       <h1>useEffect</h1>
       <Form3 />
-      
+
+      <h1>Hooks</h1>
+      <Form4 />
+
     </div>
   );
 }

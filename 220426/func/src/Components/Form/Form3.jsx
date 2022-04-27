@@ -15,6 +15,7 @@ const useInput = () => {
     }
 }
 
+// 폼체크
 const validate = (input) => {
     const {userid, password} = input
     const errors = {}
@@ -24,7 +25,7 @@ const validate = (input) => {
     } else if ( !/^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(userid) ) {
         // 정규표현식
         // ^ : 시작하겠다는 의미
-        // & : 끝나겠다는 의미
+        // $ : 끝나겠다는 의미
         // 이메일 정규식 : !/^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(userid)
         // test() 메소드 안의 인자값이 정규식에 합당한지 검사 : return값은 true, false 
         errors.userid = "입력된 이메일이 유효하지 않습니다."
@@ -39,8 +40,6 @@ const validate = (input) => {
     return errors
 }
 
-
-// 폼체크
 
 const Form = () => {
 
