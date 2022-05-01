@@ -6,6 +6,7 @@ Redux 없이 Hook만을 이용해서 전역 상태 관리를 해줄 수 있다.
 # useReducer
 Hook 등장 이후 나온 개념.
 <br>
+useContext와 함께 사용되는 경우가 많으며 useReducer를 사용하면 전역 상태 관리에 용이하다.
 
 
 # useCallback

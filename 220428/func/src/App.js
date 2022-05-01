@@ -7,14 +7,14 @@ import Reduce from './Components/Reducer/Reduce.jsx'
 function App() {
   return (
     <div className="App">
-      <h1>useCallback</h1>
-      <Callback />
+      {/* <h1>useCallback</h1>
+      <Callback /> */}
 
       <h1>useContext</h1>
       <Context />
 
-      <h1>useReducer</h1>
-      <Reduce />
+      {/* <h1>useReducer</h1>
+      <Reduce /> */}
     </div>
   );
 }
