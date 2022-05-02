@@ -74,6 +74,8 @@ reducer는 action을 이용해서 state를 반환
 Redux를 사용하면 reducer가 상태를 반환하기 전에 미들웨어를 거친다.
 <br>
 미들웨어 영역에서 비동기 통신을 통해 상태를 변환시킬지 여부를 체크.
+<br>
+<br>
 
 ## redux === Context API
 redux는 상태 추적이 가능.
@@ -100,8 +102,9 @@ state = {
 이런 형태로 되어있는 상태를 redux를 사용해서 보다 쉽게 관리할 수 있다.
 
 <br>
-
+<br>
 redux는 리액트에서 만든 것이 아니기 때문에 redux와 React를 연결해주는 라이브러리 설치 필요
+
 ```
 npm install redux react-redux
 ```
@@ -112,4 +115,5 @@ npm install redux-devtools-extension
 ```
 
 redux === context API
+<br>
 useReducer, useDispatch
