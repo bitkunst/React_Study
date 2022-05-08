@@ -75,7 +75,7 @@ const aa = () => {
 // 기존에는 component 안에서만 dispatch를 사용할 수 있었다.
 // 로직에 대한 코드를 분리해서 작성할 수 있다.
 // 다른 파일에서도 dispatch 사용 가능
-const aaa = () => async (dispatch) => {
+const loginAPI = () => async (dispatch) => {
     // dispatch({type: '로그인 할래2'})
     // dispatch({})
     dispatch({type: '로그인 시도'})
@@ -86,8 +86,8 @@ const aaa = () => async (dispatch) => {
         // 실행이 된다면
         dispatch({type: '로그인 성공', payload: true})
     } catch (e) {
-        dispatch({type: '로그인 실해', payload: false})
+        dispatch({type: '로그인 실패', payload: false})
     }
 }
 
-store.dispatch(aa())
+store.dispatch(loginAPI())

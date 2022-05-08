@@ -1,7 +1,7 @@
 # Redux middleware
 
-- redux Thunk
-- redux Saga
+- redux thunk
+- redux saga
 
 <br>
 
@@ -25,7 +25,7 @@ npm install redux
 
   - applyMiddleware: 미들웨어 넣을 때 사용
   bindActionCreators: [Function: bindActionCreators],
-  - combineReducers: reducer 합치기 dnlgo
+  - combineReducers: 리듀서 합치기 위해 사용
   - compose: 미들웨어 넣을 때 사용
   - createStore: state, dispatch, .. store에 담는다.
   legacy_createStore: [Function: createStore]
@@ -35,3 +35,5 @@ npm install redux
 ```
 npm install redux-saga
 ```
+
+
