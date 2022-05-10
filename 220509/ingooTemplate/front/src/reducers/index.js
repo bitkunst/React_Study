@@ -3,20 +3,20 @@ import { createAction, handleActions } from 'redux-actions'
 import { persistReducer } from 'redux-persist'
 // reducer가 실행될 때 persist도 묶어서 사용.
 import storage from 'redux-persist/lib/storage'
-// localStorage를 사용
+// localStorage를 사용하기 위함.
 import counter from './counter'
 import user from './user.js'
 
 // config
-const persist = {
+// localStorage의 key, value
+const persistConfig = {
     key: 'user',
     storage,
-    whitelist: ['user']  // 전역 상태값의 내용중 user만 사용하겠다는 의미, user를 추적
+    whitelist: ['user']  // store의 내용중 user reducer만 localStorage에 저장하겠다는 의미.
 }
-// persist가 store에 있는 user 객체만을 localStorage에 저장.
-// localStorage에 있던 값을 store 안의 user 객체의 디폴트 값으로 넣어준다.
+// persist가 store에 있는 user reducer만을 localStorage에 저장.
+// localStorage에 있던 값을 store 안의 user reducer의 initialState 값으로 넣어준다.
 
-// localStorage의 key, value
 // whitelist
 /*
     {
@@ -29,14 +29,12 @@ const persist = {
     }
 */
 
-
 const rootReducer = combineReducers({
     counter,
     user
 })
 
-
-export default persistReducer(persist, rootReducer)
+export default persistReducer(persistConfig, rootReducer)
 // rootReducer와 persist를 묶어서 사용
 // persist와 관련된 reducer를 만들어준 것
 

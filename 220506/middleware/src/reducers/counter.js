@@ -1,3 +1,5 @@
+import { createAction, handleActions } from 'redux-actions'
+
 const initialState = {
     number: 0,
     loading: false,
@@ -5,52 +7,49 @@ const initialState = {
 }
 
 const UP = 'COUNTER/UP_REQUEST'
+const UP_SUCCESS = 'COUNTER/UP_SUCCESS'
+const UP_FAILURE = 'COUNTER/UP_FAILURE'
 const DOWN = 'COUNTER/DOWN_REQUEST'
+const DOWN_SUCCESS = 'COUNTER/DOWN_SUCCESS'
+const DOWN_FAILURE = 'COUNTER/DOWN_FAILURE'
 
-export const up = (payload) => ({type: UP, payload})
-export const down = (payload) => ({type: DOWN, payload})
+export const up = createAction(UP)
+export const down = createAction(DOWN)
 
-const counter = (state = initialState, action) => {
-    switch (action.type) {
-        case 'COUNTER/UP_REQUEST' :
-            return {
-                ...state,
-                loading: true,
-                error: null
-            }
-        case 'COUNTER/UP_SUCCESS' :
-            return {
-                ...state,
-                loading: false,
-                number: state.number + 1
-            }
-        case 'COUNTER/UP_FAILURE' :
-            return {
-                ...state,
-                loading: false,
-                error: '에러 발생'
-            }
-        case 'COUNTER/DOWN_REQUEST' :
-            return {
-                ...state,
-                loading: true,
-                error: null
-            }
-        case 'COUNTER/DOWN_SUCCESS' :
-            return {
-                ...state,
-                loading: false,
-                number: state.number - 1
-            }
-        case 'COUNTER/DOWN_FAILURE' :
-            return {
-                ...state,
-                loading: false,
-                error: '에러 발생'
-            }
-        default :
-            return state
-    }
-}
+const counter = handleActions(
+    {
+        [UP] : (state, action) => ({
+            ...state,
+            loading: true,
+            error: null
+        }),
+        [UP_SUCCESS] : (state, action) => ({
+            ...state,
+            loading: false,
+            number: state.number + 1
+        }),
+        [UP_FAILURE] : (state, action) => ({
+            ...state,
+            loading: false,
+            error: '에러 발생'
+        }),
+        [DOWN] : (state, action) => ({
+            ...state,
+            loading: true,
+            error: null
+        }),
+        [DOWN_SUCCESS] : (state, action) => ({
+            ...state,
+            loading: false,
+            number: state.number - 1
+        }),
+        [DOWN_FAILURE] : (state, action) => ({
+            ...state,
+            loading: false,
+            error: '에러 발생'
+        })
+    }, 
+    initialState
+)
 
 export default counter;

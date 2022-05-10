@@ -5,6 +5,7 @@ import { user_login_request } from '../reducers/user.js'
 async function loginAPI(payload) {
     const result =  await axios.post('http://localhost:3500/user/login', payload)
     const { token } = result.data
+    console.log(token)
     const response = await axios.post('http://localhost:3500/user/me', null, {
         headers: {
             "Authorization": `Bearer ${token}`
@@ -18,7 +19,7 @@ function* login(action) {
     // axios 관련 코드
     try {   
         const result = yield call(loginAPI, action.payload)
-        console.log(result)
+        console.log(result.data)
         // axios 성공
         yield put({
             type: 'USER/LOGIN_SUCCESS',
