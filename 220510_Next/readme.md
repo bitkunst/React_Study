@@ -15,6 +15,7 @@ CSR : Client Side Rendering
 
 Next의 장점은 필요할 때 SSR을 할 수 있다는 것이다. (8분..)
 <br>
+<br>
 
 # NEXT project
 ```
@@ -41,15 +42,16 @@ package.json 파일 세팅.
 ```
 npm run dev -> .next 디렉토리 생성
 <br>
-
-
+<br>
 
 ## pages 디렉토리 생성
+---
 pages 디렉토리 안의 파일명이 uri이 된다.
 
 <br>
 
 ## .babelrc 파일
+---
 .babelrc 파일 생성
 <br>
 작성된 내용대로 babel을 실행시켜준다.
@@ -59,10 +61,16 @@ pages 디렉토리 안의 파일명이 uri이 된다.
     "plugins": ["styled-components"]
 }
 
-## _app.jsx
+<br>
+
+## _app.jsx 파일
+---
 페이지에 관련된 컴포넌트 상위내용
 
-## _document.jsx
+<br>
+
+## _document.jsx 파일
+---
 HTML 레이아웃,,
 코드가 복잡,,
 <br>
@@ -70,25 +78,34 @@ HTML 레이아웃,,
 <br>
 _app.jsx -> _document.jsx -> about.jsx
 
+<br>
+
 ## 라우팅
+---
 파일 자체가 하나의 라우터
 <br>
-http://localhost:3001/board/list
+`http://localhost:3001/board/list`
 <br>
 pages 디렉토리 안에서 board 디렉토리 생성
 <br>
 board 디렉토리 안에서 list.jsx 파일 생성
 <br>
-http://localhost:3001/board/view/1
+`http://localhost:3001/board/view/1`
 <br>
 board 디렉토리, view 디렉토리, 1 은 파일
 <br>
-하지만 view/1, view/2, view/3, ... <- 동적 라우팅
+하지만 view/1, view/2, view/3, ... <-  동적 라우팅 사용
+
+<br>
 
 ## 동적라우팅
+---
 [id].jsx 형태로 파일 생성
 
+<br>
+
 ## Server Side Rendering
+---
 ```javascript
 export function getServerSideProps(context) {
 
@@ -105,7 +122,10 @@ export function getServerSideProps(context) {
 }
 ```
 
+<br>
+
 ## 디자인
+---
 google -> Ant Design
 ```
 npm install antd @ant-design/icons styled-components
